@@ -1,0 +1,359 @@
+:root {
+  --color-aqua: #7fdbff;
+  --color-black: #111111;
+  --color-blue: #0074d9;
+  --color-dark-blue: #00539b;
+  --color-darkest-gray: #333333;
+  --color-dark-gray: #444444;
+  --color-fuchsia: #f012be;
+  --color-gray: #aaaaaa;
+  --color-green: #2ecc40;
+  --color-light-blue: #1b95ff;
+  --color-light-purple: #d50ff2;
+  --color-lighter-purple: #e42bff;
+  --color-lime: #01ff70;
+  --color-maroon: #85144b;
+  --color-navy: #001f3f;
+  --color-olive: #3d9970;
+  --color-orange: #ff851b;
+  --color-purple: #b10dc9;
+  --color-red: #ff4136;
+  --color-silver: #dddddd;
+  --color-teal: #39cccc;
+  --color-white: #ffffff;
+  --color-yellow: #ffdc00;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 4rem;
+  --size-xs: 0.5rem;
+  --size-sm: 1rem;
+  --size-md: 2rem;
+  --size-lg: 3rem;
+  --size-xl: 4rem;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--color-darkest-gray);
+}
+
+button {
+  border: solid 0px transparent;
+  background-color: var(--color-blue);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-silver);
+  border-radius: calc(var(--spacing-xs) / 2);
+  font-weight: bold;
+  font-size: var(--size-sm);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-light-purple);
+}
+
+button:active {
+  background-color: var(--color-lighter-purple);
+}
+
+button.delete {
+  background-color: var(--color-red);
+}
+
+button.delete:hover {
+  background-color: var(--color-light-purple);
+}
+
+button.delete:active {
+  background-color: var(--color-lighter-purple);
+}
+
+button.icon {
+  border-radius: 50%;
+  width: var(--size-md);
+  height: var(--size-md);
+  padding: 0;
+}
+
+ul,
+nav {
+  list-style-type: none;
+  list-style-position: inside;
+}
+
+input[type="text"] {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: calc(var(--spacing-xs) / 2);
+}
+
+a:link {
+  color: var(--color-blue);
+}
+
+a:visited {
+  colof: var(--color-dark-blue);
+}
+
+a:hover,
+a:active {
+  color: var(--color-light-blue);
+}
+
+/* Forms */
+input[type="text"] {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  border-bottom: solid 1px var(--color-silver);
+}
+
+svg.icon {
+  width: var(--size-sm);
+  height: var(--size-sm);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1.25rem;
+}
+
+/* Layout */
+hr {
+  height: 0px;
+  border: solid 1px var(--color-gray);
+  margin: var(--spacing-sm);
+}
+
+.horizontal-padding {
+  padding: 0 var(--spacing-sm);
+}
+
+.vertical-padding {
+  padding: var(--spacing-sm) 0;
+}
+
+.padding {
+  padding: var(--spacing-sm);
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: var(--spacing-md) 0;
+}
+
+.tabs li {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-top: solid 1px var(--color-gray);
+  border-right: solid 1px var(--color-gray);
+  border-left: solid 1px var(--color-gray);
+  border-bottom: solid 1px var(--color-gray);
+  cursor: pointer;
+  color: var(--color-white);
+}
+
+.tabs li:first-child {
+  border-top-left-radius: var(--size-sm);
+  border-bottom-left-radius: var(--size-sm);
+}
+
+.tabs li:last-child {
+  border-top-right-radius: var(--size-sm);
+  border-bottom-right-radius: var(--size-sm);
+}
+
+.tabs .selected {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  border-bottom: none;
+  border-color: var(--color-orange);
+}
+
+.key-value-pairs li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.key-value-pairs li input:first-child {
+  font-style: italic;
+  color: var(--color-darkest-gray);
+}
+
+.key-value-pairs li input:last-child {
+  width: 100%;
+  font-weight: bold;
+}
+
+#variable-list li input:last-of-type {
+  flex: 2;
+  margin-right: var(--spacing-sm);
+}
+
+.key-value-pairs li hr {
+  flex-basis: 100%;
+}
+
+.key-value-pairs .equals {
+  margin: 0 var(--spacing-xs);
+}
+
+.alias input[name="command[]"] {
+  flex: 2;
+  margin-right: var(--spacing-sm);
+}
+
+.group-heading {
+  padding: var(--spacing-sm) 0 0 0;
+}
+
+.key-value-pairs li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.edit-viewport {
+  background: var(--color-silver);
+  margin: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--spacing-xs);
+  padding: var(--spacing-sm);
+}
+
+.pane {
+  display: none;
+}
+.pane.selected {
+  display: block;
+}
+
+.search-or-add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-or-add input {
+  margin-bottom: var(--spacing-sm);
+}
+
+.alias-search-results .alias {
+  font-weight: bold;
+  color: var(--color-darkest-gray);
+}
+
+.alias-search-results .command {
+  font-style: italic;
+  color: var(--color-dark-gray);
+}
+
+.form-field input {
+  width: calc(100% - var(--spacing-md));
+}
+
+.form-field label {
+  color: var(--color-dark-gray);
+}
+
+.form-field select {
+  margin: var(--spacing-sm) 0;
+  color: var(--color-dark-gray);
+  font-size: 1rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+.form-actions {
+  display: flex;
+  margin-top: var(--spacing-sm);
+  justify-content: flex-end;
+}
+
+.modal-mask {
+  display: none;
+  background: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  overflow: hidden;
+}
+
+.modal-mask.open {
+  display: block;
+}
+
+.modal-window {
+  display: none;
+  position: absolute;
+  background-color: var(--color-white);
+  z-index: 100;
+  padding: var(--spacing-md);
+  border-radius: var(--size-xs);
+  min-width: 500px;
+  left: calc(50% - 250px);
+  right: auto;
+}
+
+.modal-window.open {
+  display: block;
+}
+
+.modal-window button.icon.delete {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  text-align: right;
+}
+
+.bashrc-content {
+  width: calc(100% - var(--spacing-lg));
+  height: 100%;
+  padding: var(--spacing-sm);
+  min-height: 800px;
+  line-height: 1.75;
+}

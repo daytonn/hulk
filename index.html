@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <link rel="stylesheet" href="src/github-dark.css" />
+    <script src="src/highlight.min.js"></script>
+    <script src="src/bash.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Hulk</title>
+  </head>
+  <body>
+    <div class="modal-mask"></div>
+
+    <nav class="tabs">
+      <li pane="aliases">Aliases</li>
+      <li pane="bashrc">.bashrc</li>
+      <li pane="environment">Environment</li>
+      <li pane="functions">Functions</li>
+    </nav>
+
+    <section class="edit-viewport">
+      <section class="tab-panes">
+        <section class="pane" name="aliases">
+          <div class="modal-window add-alias-modal" name="add-alias-modal">
+            <button class="icon delete">
+              <svg
+                width="24px"
+                height="24px"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                color="#000000">
+                <path
+                  d="M9.17218 14.8284L12.0006 12M14.829 9.17157L12.0006 12M12.0006 12L9.17218 9.17157M12.0006 12L14.829 14.8284"
+                  stroke="#FFFFFF"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="var(--color-red)"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path></svg></button>
+            <div class="form-field">
+              <input type="text" placeholder="alias" />
+            </div>
+            <div class="form-field">
+              <input type="text" placeholder="command" />
+            </div>
+            <div class="form-field">
+              <select id="alias-group-select" name="group">
+                <option value="none">Select a group (optional)</option>
+              </select>
+            </div>
+            <div class="form-actions">
+              <button type="submit">Add</button>
+            </div>
+          </div>
+          <h2>Aliases</h2>
+          <section class="search-or-add">
+            <input type="text" placeholder="Search for alias" />
+            <ul class="alias-search-results"></ul>
+            <button type="button" modal="add-alias-modal">Add alias</button>
+          </section>
+          <ul class="key-value-pairs" id="alias-list"></ul>
+        </section>
+        <section class="pane" name="bashrc">
+          <h2>.bashrc</h2>
+          <pre class="bashrc-content"></pre>
+        </section>
+        <section class="pane" name="environment">
+          <h2>Environment</h2>
+          <section class="search-or-add">
+            <input type="text" placeholder="Search for variable" />
+            <button type="button" modal="add-variable-modal">Add ENV var</button>
+          </section>
+          <ul class="key-value-pairs" id="variable-list"></ul>
+        </section>
+        <section class="pane" name="functions">
+          <h2>Functions</h2>
+        </section>
+      </section>
+    </section>
+  </body>
+  <script src="./renderer.js" type="module"></script>
+</html>
