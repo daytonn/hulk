@@ -1,8 +1,8 @@
 <!DOCTYPE html>
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js" />
     <link rel="stylesheet" href="src/github-dark.css" />
     <script src="src/highlight.min.js"></script>
     <script src="src/bash.min.js"></script>
@@ -11,7 +11,6 @@
   </head>
   <body>
     <div class="modal-mask"></div>
-
     <nav class="tabs">
       <li pane="aliases">Aliases</li>
       <li pane="bashrc">.bashrc</li>

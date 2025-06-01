@@ -7,7 +7,7 @@
   --color-dark-gray: #444444;
   --color-fuchsia: #f012be;
   --color-gray: #aaaaaa;
-  --color-green: #2ecc40;
+  --color-green: #5DA27C;
   --color-light-blue: #1b95ff;
   --color-light-purple: #d50ff2;
   --color-lighter-purple: #e42bff;
@@ -17,11 +17,22 @@
   --color-olive: #3d9970;
   --color-orange: #ff851b;
   --color-purple: #b10dc9;
-  --color-red: #ff4136;
+  --color-red: #DB2426;
   --color-silver: #dddddd;
   --color-teal: #39cccc;
   --color-white: #ffffff;
   --color-yellow: #ffdc00;
+  --color-faded-red: #E25051;
+
+  --color-sand: #D9CEAD;
+  --color-baby-blue: #D0E2F2;
+  --color-light-sand: #EBD5AA;
+  --color-dark-sand: #BFA87E;
+  --color-faded-dirt: #A4927C;
+  --color-dirt: #8C7961;
+  --color-chocolate: #55493b;
+  --color-old-navy: #61748C;
+  --color-faded-navy: #7C8EA4;
 
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -33,6 +44,29 @@
   --size-md: 2rem;
   --size-lg: 3rem;
   --size-xl: 4rem;
+
+  --color-background: var(--color-sand);
+  --color-highlighted: var(--color-baby-blue);
+}
+
+:root {
+  --theme-color-1: var(--color-dirt);
+  --theme-color-2: var(--color-sand);
+  --theme-color-3: var(--color-baby-blue);
+  --theme-color-4: var(--color-sand);
+  --theme-color-5: var(--color-dark-sand);
+
+  --theme-background: var(--color-dirt);
+  --theme-dark-background: var(--color-chocolate);
+  --theme-background-highlight: var(--color-faded-dirt);
+  --theme-foreground: var(--color-sand);
+  --theme-text: var(--color-dirt);
+  --theme-text-inverted: var(--color-sand);
+  --theme-cta: var(--color-old-navy);
+  --theme-cta-highlight: var(--color-faded-navy);
+  --theme-danger: var(--color-red);
+  --theme-danger-higlight: var(--color-faded-red);
+  --theme-success: var(--color-green);
 }
 
 body,
@@ -43,17 +77,18 @@ html {
   margin: 0;
   font-size: 16px;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  background-color: var(--color-darkest-gray);
+  color: var(--theme-color-1);
+  background-color: var(--theme-color-1);
 }
 
 button {
   border: solid 0px transparent;
-  background-color: var(--color-blue);
+  background-color: var(--theme-cta);
   padding: var(--spacing-xs) var(--spacing-sm);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--color-silver);
+  color: var(--theme-text-inverted);
   border-radius: calc(var(--spacing-xs) / 2);
   font-weight: bold;
   font-size: var(--size-sm);
@@ -61,23 +96,23 @@ button {
 }
 
 button:hover {
-  background-color: var(--color-light-purple);
+  background-color: var(--theme-cta-highlight);
 }
 
 button:active {
-  background-color: var(--color-lighter-purple);
+  background-color: var(--theme-cta-highlight);
 }
 
 button.delete {
-  background-color: var(--color-red);
+  background-color: var(--theme-danger);
 }
 
 button.delete:hover {
-  background-color: var(--color-light-purple);
+  background-color: var(--theme-danger-higlight);
 }
 
 button.delete:active {
-  background-color: var(--color-lighter-purple);
+  background-color: var(--theme-danger-higlight);
 }
 
 button.icon {
@@ -167,6 +202,10 @@ hr {
   margin: var(--spacing-sm);
 }
 
+.hidden {
+  display: none;
+}
+
 .horizontal-padding {
   padding: 0 var(--spacing-sm);
 }
@@ -193,7 +232,12 @@ hr {
   border-left: solid 1px var(--color-gray);
   border-bottom: solid 1px var(--color-gray);
   cursor: pointer;
-  color: var(--color-white);
+  color: var(--theme-color-2);
+}
+
+.tabs li:hover {
+  background-color: var(--theme-background-highlight);
+  color: var(--theme-dark-background);
 }
 
 .tabs li:first-child {
@@ -207,10 +251,18 @@ hr {
 }
 
 .tabs .selected {
-  background-color: var(--color-orange);
-  color: var(--color-white);
+  background-color: var(--theme-color-2);
+  color: var(--theme-dark-background);
   border-bottom: none;
-  border-color: var(--color-orange);
+  border-color: var(--theme-color-2);
+}
+
+.tabs .selected:hover {
+  background-color: var(--theme-color-2);
+  color: var(--theme-dark-background);
+  border-bottom: none;
+  border-color: var(--theme-color-2);
+  cursor: default;
 }
 
 .key-value-pairs li {
@@ -256,7 +308,7 @@ hr {
 }
 
 .edit-viewport {
-  background: var(--color-silver);
+  background: var(--theme-color-4);
   margin: var(--spacing-md) var(--spacing-xl);
   border-radius: var(--spacing-xs);
   padding: var(--spacing-sm);
@@ -278,6 +330,13 @@ hr {
 
 .search-or-add input {
   margin-bottom: var(--spacing-sm);
+}
+
+.alias-search-results {
+  background-color: var(--color-white);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: .25rem;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
 }
 
 .alias-search-results .alias {

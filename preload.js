@@ -13,5 +13,5 @@ contextBridge.exposeInMainWorld("API", {
   getHomeDir: () => ipcRenderer.invoke("getHomeDir"),
   getEnv: () => ipcRenderer.invoke("getEnv"),
   getBashRC: () => ipcRenderer.invoke("getBashRC"),
-  saveAliases: () => ipcRenderer.invoke("saveAliases"),
+  saveAliases: (...args) => ipcRenderer.invoke("saveAliases", ...args),
 });
